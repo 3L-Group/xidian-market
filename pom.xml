@@ -9,7 +9,7 @@
   <version>1.0.0.RELEASE</version>
 
   <name>xidian-market</name>
-  <url>http://www.example.com</url>
+  <url>https://github.com/3L-Group/xidian-market</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -17,8 +17,6 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
-
-
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
