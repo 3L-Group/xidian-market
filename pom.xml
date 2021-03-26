@@ -11,6 +11,7 @@
   <modules>
     <module>xdm-common</module>
     <module>xdm-user</module>
+    <module>xdm-gateway</module>
   </modules>
 
   <name>xidian-market</name>
