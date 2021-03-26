@@ -1,5 +1,15 @@
-package com.saturn.gateway;/**
+package com.saturn.gateway;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
 @author han long yi
 @create 2021-03-26 10:10
-*/public class GateWayApplication {
+*/
+@SpringBootApplication
+public class GateWayApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(GateWayApplication.class,args);
+    }
 }
