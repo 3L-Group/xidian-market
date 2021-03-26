@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: xdm-user
+  cloud:
+    nacos:
+      server-addr: http://121.5.110.175:8848
+      discovery:
+        server-addr: ${spring.cloud.nacos.server-addr}
+        namespace: 0f12a9e8-efd1-44e9-9663-2eb31e97a75d
+        group: SATURN
+      config:
+        namespace: 0f12a9e8-efd1-44e9-9663-2eb31e97a75d
+        group: SATURN
+        file-extension: yaml
