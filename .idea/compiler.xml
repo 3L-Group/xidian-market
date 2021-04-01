@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="xdm-user" />
+        <module name="xdm-product" />
         <module name="xdm-gateway" />
         <module name="xdm-file" />
         <module name="xdm-common" />
@@ -20,6 +21,7 @@
       <module name="xdm-common" options="-parameters" />
       <module name="xdm-file" options="-parameters" />
       <module name="xdm-gateway" options="-parameters" />
+      <module name="xdm-product" options="-parameters" />
       <module name="xdm-user" options="-parameters" />
       <module name="xidian-market" options="-parameters" />
     </option>

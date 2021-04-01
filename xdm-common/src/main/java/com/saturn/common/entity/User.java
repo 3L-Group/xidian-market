@@ -2,15 +2,23 @@ package com.saturn.common.entity;
 
 import lombok.Data;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * @Author: qyl
  * @Date: 2021/3/26 9:16
  */
 @Data
+@Table(name = "user")
 public class User {
     /**
      * 用户 ID
      */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
     /**
      * 用户名
