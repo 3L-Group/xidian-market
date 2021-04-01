@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>xidian-market</artifactId>
+        <groupId>com.saturn</groupId>
+        <version>1.0.0.RELEASE</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>xdm-file</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.saturn</groupId>
+            <artifactId>xdm-common</artifactId>
+            <version>1.0.0.RELEASE</version>
+        </dependency>
+
+        <!--阿里云上传服务-->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>3.4.2</version>
+        </dependency>
+    </dependencies>
+</project>

@@ -9,16 +9,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="xdm-user" />
         <module name="xdm-gateway" />
+        <module name="xdm-file" />
         <module name="xdm-common" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="11">
-      <module name="xdm-file" target="1.8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="11" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="xdm-common" options="-parameters" />
+      <module name="xdm-file" options="-parameters" />
       <module name="xdm-gateway" options="-parameters" />
       <module name="xdm-user" options="-parameters" />
       <module name="xidian-market" options="-parameters" />
