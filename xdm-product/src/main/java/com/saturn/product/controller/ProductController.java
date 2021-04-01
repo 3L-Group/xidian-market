@@ -1,5 +1,6 @@
 package com.saturn.product.controller;
 
+import com.saturn.common.entity.Product;
 import com.saturn.common.utils.ResponseResult;
 import com.saturn.product.vo.MiniVO;
 import com.saturn.product.vo.ProductVO;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -20,11 +22,12 @@ public class ProductController {
 
     /**
      * 添加商品
-     * @param productVO
+     * @param product
+     * @param pictureList
      * @return
      */
     @PostMapping("/add")
-    public ResponseResult<Void> addProduct(ProductVO productVO) {
+    public ResponseResult<Void> addProduct(Product product, List<MultipartFile> pictureList) {
         return null;
     }
 
