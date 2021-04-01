@@ -15,4 +15,12 @@ public interface FileService {
      * @return
      */
     String uploadAvatar(String userId, MultipartFile file);
+
+    /**
+     * 上传商品图片
+     * @param prefix
+     * @param file
+     * @return
+     */
+    String uploadProductPicture(String prefix, MultipartFile file);
 }

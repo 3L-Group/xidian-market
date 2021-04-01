@@ -28,6 +28,8 @@ public class AliyunConfig {
     private String bucketName;
     @Value("${aliyun.oss.avatarUrlPrefix}")
     private String avatarUrlPrefix;
+    @Value("${aliyun.oss.productPictureUrlPrefix}")
+    private String productPictureUrlPrefix;
 
     @Bean
     public OSS oss() {

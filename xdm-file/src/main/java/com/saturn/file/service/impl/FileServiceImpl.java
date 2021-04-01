@@ -28,13 +28,13 @@ public class FileServiceImpl implements FileService {
      */
     private static final String IMG_EXT_NAME = "png";
 
-    private static final String AVATAR_PREFIX = "avatar/";
+    private static final String AVATAR_PREFIX = "xidian_market/avatar/";
 
-    private static final String USER_PREFIX = "user-";
+    private static final String PRODUCT_PICTURE_PREFIX = "xidian_market/product_picture/";
 
     @Override
     public String uploadAvatar(String userId, MultipartFile file) {
-        String filename = USER_PREFIX + userId + "." + IMG_EXT_NAME;
+        String filename = "user-" + userId + "." + IMG_EXT_NAME;
         String filePath = AVATAR_PREFIX + filename;
 
         String url = null;
@@ -42,6 +42,23 @@ public class FileServiceImpl implements FileService {
             // 存储到oss
             oss.putObject(aliyunConfig.getBucketName(), filePath, new ByteArrayInputStream(file.getBytes()));
             url = aliyunConfig.getAvatarUrlPrefix() + filename;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        // 返回url
+        return url;
+    }
+
+    @Override
+    public String uploadProductPicture(String prefix, MultipartFile file) {
+        String filename = prefix + "." + IMG_EXT_NAME;
+        String filePath = PRODUCT_PICTURE_PREFIX + filename;
+
+        String url = null;
+        try {
+            // 存储到oss
+            oss.putObject(aliyunConfig.getBucketName(), filePath, new ByteArrayInputStream(file.getBytes()));
+            url = aliyunConfig.getProductPictureUrlPrefix() + filename;
         } catch (IOException e) {
             e.printStackTrace();
         }

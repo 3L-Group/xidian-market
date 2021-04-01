@@ -28,4 +28,15 @@ public class FileController {
     public String uploadAvatar(String userId, MultipartFile file) {
         return fileService.uploadAvatar(userId, file);
     }
+
+    /**
+     * 上传商品图片
+     * @param prefix 商品图片前缀（要保证唯一性）
+     * @param file
+     * @return
+     */
+    @PostMapping("/file/upload/productPicture")
+    public String uploadProductPicture(String prefix, MultipartFile file) {
+        return fileService.uploadProductPicture(prefix, file);
+    }
 }
