@@ -7,7 +7,6 @@ import com.saturn.user.mapper.UserMapper;
 import com.saturn.user.service.UserService;
 import com.saturn.user.utils.EncryptUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
@@ -25,13 +24,14 @@ public class UserServiceImpl implements UserService {
     @Resource
     private UserMapper userMapper;
 
-    @Autowired
+    @Resource
     private StringRedisTemplate stringRedisTemplate;
+
+    private static final String DEFAULT_AVATAR_URL = "https://qyl-bucket.oss-cn-hangzhou.aliyuncs.com/xidian_market/avatar/default_avatar.png";
 
     //用户注册
     @Override
     public ResponseResult<Void> register(User user, String verifyCode) {
-
         //根据phone查询的条件
         Example phoneExample = new Example(User.class);
         Example.Criteria criteriaPhone = phoneExample.createCriteria();
@@ -55,6 +55,9 @@ public class UserServiceImpl implements UserService {
         if (userMapper.selectOneByExample(usernameExample) != null){
             return ResponseResult.fail(ResponseEnum.USERNAME_EXIST.getCode(), ResponseEnum.USERNAME_EXIST.getMsg());
         }
+
+        user.setAvatar(DEFAULT_AVATAR_URL);
+        user.setCredit(3);
 
         //MD5密码加密
         user.setPhone(user.getPhone());
