@@ -33,8 +33,8 @@ public class User {
     /**
      * QQ号
      */
-    @Column(name = "q_number")
-    private String qNumber;
+    @Column(name = "qq_number")
+    private String qqNumber;
     /**
      * 头像地址
      */
