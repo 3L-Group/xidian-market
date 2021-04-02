@@ -2,6 +2,8 @@ package com.saturn.user.controller;
 
 import com.saturn.common.entity.User;
 import com.saturn.common.utils.ResponseResult;
+import com.saturn.user.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +17,9 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
+    @Autowired
+    private UserService userService;
 
     /**
      * 发送验证码
@@ -34,7 +39,7 @@ public class UserController {
      */
     @PostMapping("/register")
     public ResponseResult<Void> register(User user, String verifyCode) {
-        return null;
+        return userService.register(user,verifyCode);
     }
 
     /**

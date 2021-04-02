@@ -2,10 +2,7 @@ package com.saturn.common.entity;
 
 import lombok.Data;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @Author: qyl
@@ -19,6 +16,7 @@ public class User {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Integer userId;
     /**
      * 用户名
@@ -32,6 +30,11 @@ public class User {
      * 手机号
      */
     private String phone;
+    /**
+     * QQ号
+     */
+    @Column(name = "q_number")
+    private String qNumber;
     /**
      * 头像地址
      */
