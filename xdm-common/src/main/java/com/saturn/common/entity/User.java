@@ -16,7 +16,6 @@ public class User {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
     private Integer userId;
     /**
      * 用户名
@@ -33,7 +32,6 @@ public class User {
     /**
      * QQ号
      */
-    @Column(name = "qq_number")
     private String qqNumber;
     /**
      * 头像地址
