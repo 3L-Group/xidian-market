@@ -21,6 +21,7 @@ public class JwtUtil {
 
     private static final String SIGNATURE = "!Q@W#E$R%T^Y&U*I(O)P";
 
+    private static final String USER_ID = "userId";
 
     /**
      * 获取token令牌
@@ -56,10 +57,12 @@ public class JwtUtil {
      * @param token
      * @return
      */
-    public static DecodedJWT verify(String token){
+    public static String verify(String token){
         return JWT.require(Algorithm.HMAC256(SIGNATURE))
                 .build()
-                .verify(token);
+                .verify(token)
+                .getClaim(USER_ID)
+                .asString();
     }
 
 }
