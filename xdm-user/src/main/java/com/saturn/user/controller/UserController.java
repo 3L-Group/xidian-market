@@ -1,6 +1,7 @@
 package com.saturn.user.controller;
 
 import com.saturn.common.entity.User;
+import com.saturn.common.entity.po.TokenPO;
 import com.saturn.common.utils.ResponseResult;
 import com.saturn.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public class UserController {
      */
     @PostMapping("/send")
     public ResponseResult<String> sendVerifyCode(String phone) {
-        return null;
+        return userService.sendVerifyCode(phone);
     }
 
     /**
@@ -49,8 +50,8 @@ public class UserController {
      * @return
      */
     @GetMapping("/login")
-    public ResponseResult<User> login(String phone, String password) {
-        return null;
+    public ResponseResult<TokenPO> login(String phone, String password) {
+        return userService.login(phone,password);
     }
 
     /**

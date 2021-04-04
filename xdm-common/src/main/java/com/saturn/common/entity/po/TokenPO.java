@@ -1,11 +1,10 @@
-package com.qingyuan.pigeon.pojo.PO;
+package com.saturn.common.entity.po;
 
-import com.qingyuan.pigeon.pojo.User;
+import com.saturn.common.entity.User;
 import lombok.Data;
 
 /**
- * @program: course
- * @author: GuoShuSong
+ * @author: hly
  * @create: 2020-10-21 19:28
  **/
 @Data
